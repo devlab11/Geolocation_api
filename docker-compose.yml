@@ -31,8 +31,7 @@ services:
       DB_HOST: 127.0.0.1
       DB_PORT: 3306
       DB_USER: root
-      DB_PASSWORD: Yulia061@
-      #DB_NAME: testtask
+      DB_PASSWORD: Yulia061@      
     links:
       - db    
 volumes:

@@ -38,6 +38,10 @@ sudo docker-compose up --build
 
 * How to run the test suite
 
+sudo docker exec -it geo-api_api_1 bash
+
+rspec
+
 * Services (job queues, cache servers, search engines, etc.)
 
 #Service provider https://ipstack.com/
