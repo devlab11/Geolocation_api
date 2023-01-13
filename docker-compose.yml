@@ -1,28 +1,25 @@
 version: '3.3'
 services:
   db:    
-    image: mysql:latest
+    image: mysql:8.0
     command: --default-authentication-plugin=mysql_native_password
     cap_add:
       - SYS_NICE
     restart: always
     environment:
-      # - MYSQL_DATABASE=testtask
-      # - MYSQL_ROOT_PASSWORD= root
-      
+      MYSQL_ROOT_PASSWORD:  Yulia061@  
       MYSQL_DATABASE: testtask
       MYSQL_USER: root
-      MYSQL_PASSWORD: Yulia061@
+      MYSQL_PASSWORD: Yulia061@   
     ports:
-      - "3306"
+      - 3307:3306
     expose:
-      - "3306"
-    #command: --default-authentication-plugin=mysql_native_password  
+      - "3306"   
     volumes:
       - mysql_db_data_container:/var/lib/mysql
   api:
     build: ./
-    #command: bin/rails db:migrate RAILS_ENV=development
+    #command: rails db:migrate RAILS_ENV=development
     command: rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/myapp
@@ -31,12 +28,13 @@ services:
     depends_on:
       - db
     environment:      
-      DB_HOST: db
+      DB_HOST: 127.0.0.1
       DB_PORT: 3306
       DB_USER: root
       DB_PASSWORD: Yulia061@
-      DB_NAME: testtask
+      #DB_NAME: testtask
     links:
       - db    
 volumes:
   mysql_db_data_container:
+    driver: local
