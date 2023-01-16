@@ -6,7 +6,6 @@ Rails.application.routes.draw do
       get    'geolocations/:id',  to: 'geolocations#show' 
       #put    'geolocations/:id'  , to: 'geolocations#update'          
       delete 'geolocations/:id' , to: 'geolocations#destroy'
-
       match '*path', :to => 'application#routing_error', via: :all
     end
   end    

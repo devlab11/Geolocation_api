@@ -1,5 +1,5 @@
 
 #Service provider https://ipstack.com/
-SERVICE_PROVIDER: https://ipstack.com/
-KEY: 5876d1f3c1d63f759b28fed83140f4dc
-BASE_URL: http://api.ipstack.com/
+SERVICE_PROVIDER_IPSTACK: https://ipstack.com/
+KEY_IPSTACK: 5876d1f3c1d63f759b28fed83140f4dc
+BASE_URL_IPSTACK: http://api.ipstack.com/

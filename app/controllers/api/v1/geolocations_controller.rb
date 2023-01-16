@@ -13,9 +13,11 @@ module Api::V1
         if @message = Geolocation.where(ip: geo_params['ip']).first       
           render json: {status:'SUCCESS', message: 'IP already exist in DB', data: @message}, status:200
         else
-          geo_location = IpToLocation.fetch(geo_params['ip'])       
+          #geo_location = IpToLocation.fetch(geo_params['ip']) 
+          geo_location = IpstackService::Api::V1::GetClient.get_request(geo_params['ip'])   
+          puts "geo_location #{geo_location}"  
           if geo_location["success"] == false  
-            logger.error "Error with service provider #{ENV['SERVICE_PROVIDER']} ip: #{geo_params['ip']}, responce: #{geo_location}"       
+            logger.error "Error with service provider #{ENV['SERVICE_PROVIDER_IPSTACK']} ip: #{geo_params['ip']}, responce: #{geo_location}"       
             render json: {status:'ERROR', message: "Error with service provider", data: geo_location["error"]["type"]}, status: 404  
           else          
             @message = Geolocation.create()
