@@ -5,13 +5,8 @@ module IpstackService
         module V1
             class GetClient 
                 class << GetClient
-                    def get_request(ip)
-                       
-                        res = IpstackService::ClientConnect.get(
-                            ip
-                        )
-                        puts "res#{res.body}"
-                        
+                    def get_request(ip)                         
+                        res = IpstackService::ClientConnect.get(ip)                       
                     end    
                 end 
             end
@@ -20,6 +15,7 @@ module IpstackService
 end                
        
     
+
 
 
 

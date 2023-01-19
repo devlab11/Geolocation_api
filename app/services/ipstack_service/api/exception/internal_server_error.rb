@@ -1,7 +1,7 @@
 module IpstackService
     module Api 
         module Exception
-            class BadRequest < StandardError                        
+            class InternalServerError < StandardError                        
             end   
         end 
     end 
