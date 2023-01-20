@@ -12,8 +12,8 @@ module Api::V1
       def create      
         if @message = Geolocation.where(ip: geo_params['ip']).first       
           render json: {status:'SUCCESS', message: 'IP already exist in DB', data: @message}, status:200
-        else          
-          geo_location = IpstackService::Api::V1::GetClient.get_request(geo_params['ip'])                  
+        else
+          geo_location = get_geo_location(geo_params['ip'])                  
           @message = Geolocation.create()
           @message.ip = geo_params['ip']
           @message.location_data = geo_location.body        
@@ -28,6 +28,10 @@ module Api::V1
         end      
       end
     
+      def get_geo_location(ip)
+        geo_location = IpstackService::Api::V1::GetClient.get_request(ip)
+      end
+      
       #GET /geolocations/:id
       def show
         @message = Geolocation.find(params[:id])

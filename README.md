@@ -13,34 +13,30 @@ Things you may want to cover:
 
 * Database creation
 
-create db "testtask" 
+    create db "testtask" 
 
 * Database initialization
 
-sudo docker exec -it geo-api_api_1 bash
-
-rails db:migrate
+    sudo docker exec -it geo-api_api_1 bash
+    rails db:migrate
 
 
 Bugfix Error from emoji:
 
-ALTER TABLE geolocations  
-
-  CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
-
-MODIFY location_data VARCHAR(2500)
-
+    ALTER TABLE geolocations
+    CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+    MODIFY location_data VARCHAR(2500)
     CHARACTER SET utf8mb4 COLLATE utf8mb4_bin
 
 * How to run 
 
-sudo docker-compose up --build
+    sudo docker-compose up --build
 
 * How to run the test suite
 
-sudo docker exec -it geo-api_api_1 bash
+    sudo docker exec -it geo-api_api_1 bash
 
-rspec
+    rspec
 
 * Services (job queues, cache servers, search engines, etc.)
 

@@ -3,8 +3,7 @@ module IpstackService
     class << ClientConnect
       def get(path)     
         client.get do |req|
-          req.url "#{path}"             
-          #req.params['access_key'] = '5876d1f3c1d63f759b28fed83140f'
+          req.url "#{path}"         
           req.params['access_key'] = IpstackService::Config.access_key          
         end  
       end

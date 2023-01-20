@@ -1,7 +1,6 @@
 module IpstackService
     class Config   
-        class << Config
-        
+        class << Config        
             def access_key
                 ENV['KEY_IPSTACK']
             end 
