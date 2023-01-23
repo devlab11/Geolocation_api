@@ -37,12 +37,4 @@ RSpec.describe 'GeolocationsController', type: :request do
     end
   end
 
-  # describe 'GET /destroy' do
-  #   it 'returns http success' do
-  #     geo = Geolocation.create(service_params)      
-  #     delete :destroy, params: { id: geo.to_param }     
-  #     expect(response).to have_http_status(200)
-  #   end
-  # end
-  
 end  
