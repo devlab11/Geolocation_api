@@ -7,16 +7,17 @@ Things you may want to cover:
 
 * Ruby version  
 
-   > "3.1.2"
+    "3.1.2"
 
 * Database creation  
-
-   > create db "testtask" 
-
+ ```
+   mysql -u root -p  
+   CREATE DATABASE testtask;
+ ```
 * Database initialization
  ```
-sudo docker exec -it geo-api_api_1 bash <br /> 
-rails db:migrate
+    sudo docker exec -it geo-api_api_1 bash 
+    rails db:migrate
 ```
 
 Bugfix Error from emoji:
@@ -32,14 +33,14 @@ Bugfix Error from emoji:
 ```
 * How to run the test suite
 ```
-    sudo docker exec -it geo-api_api_1 bash <br />
+    sudo docker exec -it geo-api_api_1 bash 
     rspec
 ```
-* Services (job queues, cache servers, search engines, etc.)
+* Services 
 
-#Service provider https://ipstack.com/
+    Service provider https://ipstack.com/
 
- > config: config/local_env.yml
+    > config: config/local_env.yml
 
 * Documentation API
 
